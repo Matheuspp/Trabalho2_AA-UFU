@@ -35,7 +35,7 @@ def calcDpTable(s1, s2):
 def get_suggestions(string, city_list):
     edit_list = {}
     for i in city_list:
-        edit_list[i[0]] = calcDpTable(string.lower(), i[0].lower())
+        edit_list[i[0]] = calcDpTable(string.lower().strip(), i[0].lower().strip())
 
     sorted_edit_list = {k: v for k, v in sorted(edit_list.items(), key=lambda item: item[1])}
 
@@ -43,11 +43,11 @@ def get_suggestions(string, city_list):
         
 
 if __name__ == "__main__":
-    df = pd.read_csv('list_municipios.txt')
+    df = pd.read_csv('listadenomesbrasileiros-feminino-masculino.txt')
     print('===========================================')
-    print('      Sugestão de nomes de cidades         ')
+    print('            Sugestão de Nomes         ')
     print('===========================================')
-    str_user = str(input('Insira o nome de uma cidade: '))
+    str_user = str(input('Insira algum nome: '))
     print("\n")
 
     result = get_suggestions(str_user, df.values)

@@ -79,8 +79,8 @@ def calcChangesList(s1, s2, table):
         print(i+1,".", changes[i][0],'\n', changes[i][1], '\n')
 
 if __name__ == "__main__":
-    s1 = "paca"
-    s2 = "faca"
+    s1 = "natali"
+    s2 = "natali"
     print(s1+" -> "+ s2)
     print('-----------------------------------')
     tic = time.time()
