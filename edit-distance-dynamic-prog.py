@@ -56,16 +56,16 @@ def calcChangesList(s1, s2, table):
                 j-=1
             elif table[i,j][-1] == 'i':
                 ## In case of a 'i' i.e. insertion, we insert the character in the string, print appropriate statement and move upwards.
-                statement1 = 'Insert ' + str(s1[i-1]) + ' at position ' + str(j+1) + ' in string'
+                statement1 =  str(s1[i-1]) + ' na posição ' + str(j+1) 
                 changing_string.insert(j, s1[i-1])
-                statement2 = 'Thus, now the string becomes: ' + ''.join(changing_string)
+                statement2 = 'Então, a string se torna ' + ''.join(changing_string)
                 changes.append([statement1,statement2])
                 i-=1
             elif table[i,j][-1] == 'd':
                 ## In case of a 'd' i.e. deletion, we delete the character in the string, print appropriate statement and move leftwards.
                 statement1 = 'Remove ' + str(s2[j-1])
                 del changing_string[j-1]
-                statement2 = 'Thus, now the string becomes: ' + ''.join(changing_string)
+                statement2 = 'Então, a string se torna: ' + ''.join(changing_string)
                 changes.append([statement1,statement2])
                 j-=1
             if len(changes) == int(table[len(s1), len(s2)][:-1]):
@@ -79,7 +79,7 @@ def calcChangesList(s1, s2, table):
         print(i+1,".", changes[i][0],'\n', changes[i][1], '\n')
 
 if __name__ == "__main__":
-    s1 = "natali"
+    s1 = "natalia"
     s2 = "natali"
     print(s1+" -> "+ s2)
     print('-----------------------------------')
